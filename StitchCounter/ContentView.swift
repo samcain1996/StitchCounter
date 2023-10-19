@@ -7,26 +7,47 @@
 
 import SwiftUI
 
+let IncreaseImage = Image("PlusSign")
+let DecreaseImage = Image("MinusSign")
+
+func ClampValue(value: Int, range: Range<Int>) -> Int {
+    if (value > range.upperBound) { return range.upperBound }
+    else if (value < range.lowerBound) { return range.lowerBound }
+    return value
+}
 
 struct ContentView: View {
     @State private var count : Int = 0
     @State private var total : Int = 100
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
+
+        let progress = Float(count) / Float(total)
         
-        let x = Float(count)
-        let y = Float(total)
-        let progress = x / y
+        let circleInnerColor = (colorScheme == .dark) ? Color.white : Color.black
+        let circleOuterColor = (colorScheme == .dark) ? Color.black : Color.white
         
         VStack {
-            ProgressView(value: progress)
+            ProgressView(value: progress, label: { Text(String(Int(progress * 100)) + "% finished") })
+                .padding(.bottom, 200)
             Text(String(count))
                 .font(.system(size: 20))
-                .foregroundColor(Color.black)
-                .background(Circle().fill(Color.white).frame(width: 100, height: 100).background(Circle().fill(Color.black).frame(width: 110, height: 110)))
-            Button(action: {count += 1}, label: {Image("Increase")})
-            Button(action: {count -= 1}, label: {Image("Decrease")})
+                .foregroundColor(circleInnerColor)
+                .background(Circle().fill(circleOuterColor).frame(width: 100, height: 100).background(Circle().fill(circleInnerColor).frame(width: 110, height: 110)))
+                .padding(.bottom, 50)
+            Button(action: { count = ClampValue(value: count + 1, range: Range<Int>(0...total)) }, label: { IncreaseImage } )
+            
+            if (colorScheme == .light) {
+                Button(action: { count = ClampValue(value: count - 1, range: Range<Int>(0...total)) }, label: { DecreaseImage } )
+            }
+            else {
+                Button(action: { count = ClampValue(value: count - 1, range: Range<Int>(0...total)) }, label: { DecreaseImage.colorInvert() } )
+            }
         }
         .padding()
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
 }
 
