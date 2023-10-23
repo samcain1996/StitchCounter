@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		701A4A6F2AE3890500082E3B /* NewPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701A4A6E2AE3890500082E3B /* NewPattern.swift */; };
+		705214652AE3700F00512211 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705214642AE3700F00512211 /* Pattern.swift */; };
 		706C5DB52AE0C45E00BE9A19 /* StitchCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706C5DB42AE0C45E00BE9A19 /* StitchCounterApp.swift */; };
 		706C5DB72AE0C45E00BE9A19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706C5DB62AE0C45E00BE9A19 /* ContentView.swift */; };
 		706C5DB92AE0C45F00BE9A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706C5DB82AE0C45F00BE9A19 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		701A4A6E2AE3890500082E3B /* NewPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPattern.swift; sourceTree = "<group>"; };
+		705214642AE3700F00512211 /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
 		706C5DB12AE0C45E00BE9A19 /* StitchCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StitchCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		706C5DB42AE0C45E00BE9A19 /* StitchCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchCounterApp.swift; sourceTree = "<group>"; };
 		706C5DB62AE0C45E00BE9A19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 		706C5DA82AE0C45E00BE9A19 = {
 			isa = PBXGroup;
 			children = (
+				701A4A6E2AE3890500082E3B /* NewPattern.swift */,
 				706C5DB32AE0C45E00BE9A19 /* StitchCounter */,
 				706C5DC42AE0C45F00BE9A19 /* StitchCounterTests */,
 				706C5DCE2AE0C45F00BE9A19 /* StitchCounterUITests */,
@@ -98,6 +103,7 @@
 				706C5DB62AE0C45E00BE9A19 /* ContentView.swift */,
 				706C5DB82AE0C45F00BE9A19 /* Assets.xcassets */,
 				706C5DBA2AE0C45F00BE9A19 /* Preview Content */,
+				705214642AE3700F00512211 /* Pattern.swift */,
 			);
 			path = StitchCounter;
 			sourceTree = "<group>";
@@ -257,8 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				705214652AE3700F00512211 /* Pattern.swift in Sources */,
 				706C5DB72AE0C45E00BE9A19 /* ContentView.swift in Sources */,
 				706C5DB52AE0C45E00BE9A19 /* StitchCounterApp.swift in Sources */,
+				701A4A6F2AE3890500082E3B /* NewPattern.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +438,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +468,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

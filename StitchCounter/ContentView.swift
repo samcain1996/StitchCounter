@@ -16,37 +16,59 @@ func ClampValue(value: Int, range: Range<Int>) -> Int {
     return value
 }
 
-struct ContentView: View {
+struct CounterView: View {
     
-    @State private var count : Int = 0
-    @State private var total : Int = 100
+    @State private var count: Int = 0
+    @State private var i: Int = 0
+    @State var pattern: Pattern
+
     @Environment(\.colorScheme) var colorScheme
     
+    func ChangeCounter(increase: Bool) -> Void {
+        let rowCount = pattern.sections[i].rowCount ?? 1
+        count = increase ? count + 1 : count - 1
+        
+        if (count < 0) {
+            i = ClampValue(value: i - 1, range: 0..<pattern.sections.count)
+            count = pattern.sections[i].rowCount ?? rowCount
+        }
+        else if (count >= rowCount) {
+            i = ClampValue(value: i + 1, range: 0..<pattern.sections.count)
+            count = 0
+        }
+    }
+    
     var body: some View {
-
-        let progress = Float(count) / Float(total)
+        
+        var section = pattern.sections[i]
+        let rowCount = section.rowCount ?? 1
+        let progress = Float(count) / Float(rowCount)
         
         let circleInnerColor = (colorScheme == .dark) ? Color.white : Color.black
         let circleOuterColor = (colorScheme == .dark) ? Color.black : Color.white
-        
-        VStack {
 
+        VStack {
+            
+            Text(section.name)
             ProgressView(value: progress, label: { Text(String(Int(progress * 100)) + "%").frame(maxWidth: .infinity, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)})
                 .padding(.bottom, 200)
             
-            Text(String(count))
+            Text(String(count) + " / " + String(rowCount))
                 .font(.system(size: 20))
                 .foregroundColor(circleInnerColor)
                 .background(Circle().fill(circleOuterColor).frame(width: 100, height: 100).background(Circle().fill(circleInnerColor).frame(width: 110, height: 110)))
                 .padding(.bottom, 50)
             
-            Button(action: { count = ClampValue(value: count + 1, range: Range<Int>(0...total)) }, label: { IncreaseImage } )
+            Button(action: { ChangeCounter(increase: true) },
+                   label:  { IncreaseImage } )
             
             if (colorScheme == .light) {
-                Button(action: { count = ClampValue(value: count - 1, range: Range<Int>(0...total)) }, label: { DecreaseImage } )
+                Button(action: { ChangeCounter(increase: false) },
+                       label: { DecreaseImage } )
             }
             else {
-                Button(action: { count = ClampValue(value: count - 1, range: Range<Int>(0...total)) }, label: { DecreaseImage.colorInvert() } )
+                Button(action: { ChangeCounter(increase: false) },
+                       label: { DecreaseImage.colorInvert() } )
             }
             
             Button("Reset Count", action: { count = 0 } )
@@ -58,6 +80,3 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}

@@ -11,7 +11,7 @@ import SwiftUI
 struct StitchCounterApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CreateView()
         }
     }
 }
