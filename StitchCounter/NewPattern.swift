@@ -31,10 +31,13 @@ struct PatternEntry: View {
 // View to create a new pattern
 struct CreateView: View {
     
+    private let allowCreate: Bool
     @StateObject private var pattern: Pattern
     
-    init(pattern: Pattern = Pattern()) {
+    init(pattern: Pattern = Pattern(), allowCreate: Bool = false) {
         self._pattern = .init(wrappedValue: pattern)
+        
+        self.allowCreate = allowCreate
     }
     
     var body: some View {
@@ -74,9 +77,10 @@ struct CreateView: View {
                     destination: { CounterView(pattern: pattern) },
                     label: { Text("Create Pattern") }
                 )
-                .disabled( !pattern.sections.allSatisfy(Section.IsInitialized) )
+                .disabled( !pattern.sections.allSatisfy(Section.IsInitialized) || !allowCreate )
             }
         }
+        .navigationBarBackButtonHidden()
     }
     
 }

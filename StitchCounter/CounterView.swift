@@ -16,7 +16,7 @@ func ClampValue(value: Int, range: Range<Int>) -> Int {
     return value
 }
 
-func ConvertDecimalToPercentage(decimal: Float) -> String {
+func ConvertDecimalToPercentage(_ decimal: Float) -> String {
     return String(Int(decimal * 100)) + "%"
 }
 
@@ -50,6 +50,7 @@ struct CounterView: View {
         if (section.count == section.rows && increase) {  // Go to next section
             i = ClampValue(value: i + 1, range: pattern.sections.indices);
             section = pattern.sections[i]
+
         }
         else if (section.count == 0 && !increase) {  // Go back a section
             i = ClampValue(value: i - 1, range: pattern.sections.indices);
@@ -57,7 +58,9 @@ struct CounterView: View {
         }
         else {  // Increase current section's count
             let countRange: Range<Int> = 0..<( ( section.rows ?? 1 ) + 1 )
-            section.count = increase ? ClampValue(value: section.count + step, range: countRange) : ClampValue(value: section.count - step, range: countRange)
+            section.count = increase ? 
+                ClampValue(value: section.count + step, range: countRange) :
+                ClampValue(value: section.count - step, range: countRange)
         }
         
         count = section.count
@@ -100,7 +103,7 @@ struct CounterView: View {
             
             ProgressView(value: progress,
                          label: {
-                Text(ConvertDecimalToPercentage(decimal: progress))
+                Text(ConvertDecimalToPercentage(progress))
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .center)
                 }
@@ -137,10 +140,8 @@ struct CounterView: View {
                 action: { ChangeCount(increase: false) },
                 label:  {
                     // Change color of button depending on color scheme
-                    if (colorScheme == .dark) { DecreaseImage.colorInvert()
-                    } else {
-                        DecreaseImage
-                    }
+                    if (colorScheme == .dark) { DecreaseImage.colorInvert() }
+                    else { DecreaseImage }
                 }
             )
 

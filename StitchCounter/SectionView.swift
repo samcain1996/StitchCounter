@@ -24,6 +24,7 @@ struct SectionView: View {
                 NavigationLink("Edit Pattern") {
                     CreateView(pattern: pattern)
                 }
+                .navigationBarBackButtonHidden()
                 
                 // List all sections and how complete they are
                 List(pattern.sections.indices, id:\.self) { index in
@@ -50,6 +51,7 @@ struct SectionView: View {
                         }
                         
                     }
+                    .navigationBarBackButtonHidden()
                     
                 }
                 
