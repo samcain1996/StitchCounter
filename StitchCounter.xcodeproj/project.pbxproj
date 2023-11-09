@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		701A4A6F2AE3890500082E3B /* NewPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701A4A6E2AE3890500082E3B /* NewPattern.swift */; };
+		702610C32AFC651D003BADD9 /* NewPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702610C22AFC651D003BADD9 /* NewPattern.swift */; };
+		702610C52AFC652A003BADD9 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702610C42AFC652A003BADD9 /* SectionView.swift */; };
 		705214652AE3700F00512211 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705214642AE3700F00512211 /* Pattern.swift */; };
 		706C5DB52AE0C45E00BE9A19 /* StitchCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706C5DB42AE0C45E00BE9A19 /* StitchCounterApp.swift */; };
 		706C5DB72AE0C45E00BE9A19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706C5DB62AE0C45E00BE9A19 /* ContentView.swift */; };
@@ -36,7 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		701A4A6E2AE3890500082E3B /* NewPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPattern.swift; sourceTree = "<group>"; };
+		702610C22AFC651D003BADD9 /* NewPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPattern.swift; sourceTree = "<group>"; };
+		702610C42AFC652A003BADD9 /* SectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		705214642AE3700F00512211 /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
 		706C5DB12AE0C45E00BE9A19 /* StitchCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StitchCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		706C5DB42AE0C45E00BE9A19 /* StitchCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchCounterApp.swift; sourceTree = "<group>"; };
@@ -78,7 +80,6 @@
 		706C5DA82AE0C45E00BE9A19 = {
 			isa = PBXGroup;
 			children = (
-				701A4A6E2AE3890500082E3B /* NewPattern.swift */,
 				706C5DB32AE0C45E00BE9A19 /* StitchCounter */,
 				706C5DC42AE0C45F00BE9A19 /* StitchCounterTests */,
 				706C5DCE2AE0C45F00BE9A19 /* StitchCounterUITests */,
@@ -99,6 +100,8 @@
 		706C5DB32AE0C45E00BE9A19 /* StitchCounter */ = {
 			isa = PBXGroup;
 			children = (
+				702610C42AFC652A003BADD9 /* SectionView.swift */,
+				702610C22AFC651D003BADD9 /* NewPattern.swift */,
 				706C5DB42AE0C45E00BE9A19 /* StitchCounterApp.swift */,
 				706C5DB62AE0C45E00BE9A19 /* ContentView.swift */,
 				706C5DB82AE0C45F00BE9A19 /* Assets.xcassets */,
@@ -265,8 +268,9 @@
 			files = (
 				705214652AE3700F00512211 /* Pattern.swift in Sources */,
 				706C5DB72AE0C45E00BE9A19 /* ContentView.swift in Sources */,
+				702610C52AFC652A003BADD9 /* SectionView.swift in Sources */,
 				706C5DB52AE0C45E00BE9A19 /* StitchCounterApp.swift in Sources */,
-				701A4A6F2AE3890500082E3B /* NewPattern.swift in Sources */,
+				702610C32AFC651D003BADD9 /* NewPattern.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
