@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Entry form for a new pattern section
 struct PatternEntry: View {
     
     @EnvironmentObject var model: Section
@@ -27,13 +28,12 @@ struct PatternEntry: View {
     }
 }
 
+// View to create a new pattern
 struct CreateView: View {
     
-    @State private var rows: Int
     @StateObject private var pattern: Pattern
     
     init(pattern: Pattern = Pattern()) {
-        self._rows = .init(initialValue: 1)
         self._pattern = .init(wrappedValue: pattern)
     }
     
@@ -43,31 +43,38 @@ struct CreateView: View {
             
             VStack {
                 
+                // List each section
                 ForEach(pattern.sections) { section in
                     
                     HStack {
                         PatternEntry().environmentObject(section)
                         Button("Remove", action: {
-                            pattern.sections.removeAll { sec in
-                                sec.id == section.id
-                            }
+                           
+                                pattern.sections.removeAll { sec in
+                                    sec.id == section.id
+                                }
+                            
                         })
-                        .foregroundStyle(.red)
+                        .foregroundStyle(pattern.sections.count > 1 ? .red : .gray)
+                        .disabled(pattern.sections.count < 2)
                     }
                     
                 }
                 
+                // Add new section
                 Button("Add", action: {
                     pattern.sections.append(Section())
-                }).padding(.top)
+                })
+                .padding(.top)
                 
                 Spacer()
                 
+                // Create pattern only if all boxes are filled correctly
                 NavigationLink(
                     destination: { CounterView(pattern: pattern) },
                     label: { Text("Create Pattern") }
                 )
-                .disabled( !pattern.sections.contains(where: Section.IsInitialized) )
+                .disabled( !pattern.sections.allSatisfy(Section.IsInitialized) )
             }
         }
     }
