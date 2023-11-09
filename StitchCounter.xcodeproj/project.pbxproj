@@ -17,6 +17,7 @@
 		706C5DD02AE0C45F00BE9A19 /* StitchCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706C5DCF2AE0C45F00BE9A19 /* StitchCounterUITests.swift */; };
 		706C5DD22AE0C45F00BE9A19 /* StitchCounterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706C5DD12AE0C45F00BE9A19 /* StitchCounterUITestsLaunchTests.swift */; };
 		70B3B0EE2AFC7428006CBAC4 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3B0ED2AFC7428006CBAC4 /* CounterView.swift */; };
+		70B3B0F02AFC81E3006CBAC4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3B0EF2AFC81E3006CBAC4 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		706C5DCF2AE0C45F00BE9A19 /* StitchCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchCounterUITests.swift; sourceTree = "<group>"; };
 		706C5DD12AE0C45F00BE9A19 /* StitchCounterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchCounterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		70B3B0ED2AFC7428006CBAC4 /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		70B3B0EF2AFC81E3006CBAC4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				706C5DB82AE0C45F00BE9A19 /* Assets.xcassets */,
 				706C5DBA2AE0C45F00BE9A19 /* Preview Content */,
 				705214642AE3700F00512211 /* Pattern.swift */,
+				70B3B0EF2AFC81E3006CBAC4 /* HomeView.swift */,
 			);
 			path = StitchCounter;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				705214652AE3700F00512211 /* Pattern.swift in Sources */,
 				702610C52AFC652A003BADD9 /* SectionView.swift in Sources */,
 				706C5DB52AE0C45E00BE9A19 /* StitchCounterApp.swift in Sources */,
+				70B3B0F02AFC81E3006CBAC4 /* HomeView.swift in Sources */,
 				702610C32AFC651D003BADD9 /* NewPattern.swift in Sources */,
 				70B3B0EE2AFC7428006CBAC4 /* CounterView.swift in Sources */,
 			);

@@ -50,7 +50,6 @@ struct CounterView: View {
         if (section.count == section.rows && increase) {  // Go to next section
             i = ClampValue(value: i + 1, range: pattern.sections.indices);
             section = pattern.sections[i]
-
         }
         else if (section.count == 0 && !increase) {  // Go back a section
             i = ClampValue(value: i - 1, range: pattern.sections.indices);
@@ -64,6 +63,7 @@ struct CounterView: View {
         }
         
         count = section.count
+        SavePattern(pattern)
     }
     
     var body: some View {

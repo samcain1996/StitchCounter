@@ -34,7 +34,7 @@ struct CreateView: View {
     private let allowCreate: Bool
     @StateObject private var pattern: Pattern
     
-    init(pattern: Pattern = Pattern(), allowCreate: Bool = false) {
+    init(pattern: Pattern = Pattern.DefaultPattern(), allowCreate: Bool = false) {
         self._pattern = .init(wrappedValue: pattern)
         
         self.allowCreate = allowCreate
@@ -42,9 +42,10 @@ struct CreateView: View {
     
     var body: some View {
         
-        NavigationView {
             
             VStack {
+                
+                TextField("Pattern Name", text: $pattern.name)
                 
                 // List each section
                 ForEach(pattern.sections) { section in
@@ -53,7 +54,7 @@ struct CreateView: View {
                         PatternEntry().environmentObject(section)
                         Button("Remove", action: {
                            
-                                pattern.sections.removeAll { sec in
+                            pattern.sections.removeAll { sec in
                                     sec.id == section.id
                                 }
                             
@@ -65,7 +66,7 @@ struct CreateView: View {
                 }
                 
                 // Add new section
-                Button("Add", action: {
+                Button("New Section", action: {
                     pattern.sections.append(Section())
                 })
                 .padding(.top)
@@ -79,8 +80,7 @@ struct CreateView: View {
                 )
                 .disabled( !pattern.sections.allSatisfy(Section.IsInitialized) || !allowCreate )
             }
-        }
-        .navigationBarBackButtonHidden()
+        
     }
     
 }
